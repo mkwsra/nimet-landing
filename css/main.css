@@ -334,16 +334,6 @@ input.input100 {
   border-radius: 10px;
   margin: 0px 18px 25px 18px;
 }
-.link-description{
-  display: block;
-  font-size: 20px;
-  margin-top:15px;
- color: #333333;
-}
-.link-description:hover{
-  color: #999999;
-}
-
 /*---------------------------------------------*/
 .how-btn {
   padding: 0 20px;
