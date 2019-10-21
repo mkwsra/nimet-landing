@@ -39,7 +39,8 @@
 		<p class="txt-center m1-txt1  p-b-25">
 			We Are Working To Build Your Website Which Will Take You In A Journey To The Financial Success
 			<span>
-				<a style="display: block; font-size: 20px;margin-top:15px;color: #333333;:hover{ color: #999999;}" target="_blank"
+				<a style="display: block; font-size: 20px;margin-top:15px;color: #333333;:hover{ color: #999999;}"
+				   target="_blank"
 				   href="images/nimet-profile-en.pdf">Click to download company profile</a>
 			</span>
 		</p>
@@ -85,12 +86,16 @@
 <script src="vendor/countdowntime/moment-timezone-with-data.min.js"></script>
 <script src="vendor/countdowntime/countdowntime.js"></script>
 <script>
+    const one = new Date();
+    const another = new Date(2019, 11, 5);
+    endofTimeDays = Math.round(Math.abs((+one) - (+another)) / 8.64e7);
+
     $('.cd100').countdown100({
         /*Set Endtime here*/
         /*Endtime must be > current time*/
         endtimeYear: 0,
         endtimeMonth: 0,
-        endtimeDate: 30,
+        endtimeDate: endofTimeDays,
         endtimeHours: 0,
         endtimeMinutes: 0,
         endtimeSeconds: 0,
