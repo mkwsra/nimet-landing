@@ -85,18 +85,31 @@
 <script src="vendor/countdowntime/moment-timezone-with-data.min.js"></script>
 <script src="vendor/countdowntime/countdowntime.js"></script>
 <script>
+
+    let delta = Math.abs((new Date(2019, 10, 1, 23, 59, 60)) - (new Date())) / 1000;
+    // calculate (and subtract) whole days
+    let days = Math.floor(delta / 86400);
+    delta -= days * 86400;
+    // calculate (and subtract) whole hours
+    let hours = Math.floor(delta / 3600) % 24;
+    delta -= hours * 3600;
+    // calculate (and subtract) whole minutes
+    let minutes = Math.floor(delta / 60) % 60;
+    delta -= minutes * 60;
+    // what's left is seconds
+    let seconds = delta % 60;
+
+
     $('.cd100').countdown100({
         /*Set Endtime here*/
         /*Endtime must be > current time*/
         endtimeYear: 0,
         endtimeMonth: 0,
-        endtimeDate: 30,
-        endtimeHours: 0,
-        endtimeMinutes: 0,
-        endtimeSeconds: 0,
-        timeZone: ""
-        // ex:  timeZone: "America/New_York"
-        //go to " http://momentjs.com/timezone/ " to get timezone
+        endtimeDate: days,
+        endtimeHours: hours,
+        endtimeMinutes: minutes,
+        endtimeSeconds: seconds,
+        // timeZone: "Europe/Istanbul"
     });
 </script>
 <!--===============================================================================================-->
